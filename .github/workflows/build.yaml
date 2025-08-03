@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        platform: [ubuntu-24.04]
+        platform: [ubuntu-24.04, ubuntu-22.04-arm]
 
     runs-on: ${{ matrix.platform }}
 
@@ -32,12 +32,6 @@ jobs:
         cmake --build .
         cpack
         
-        #    - name: Upload
-        #      uses: actions/upload-artifact@v4
-        #      with:
-        #        name: Fast-CDR-${{ matrix.platform }}
-        #        path: build/*.deb
-
     - name: Deploy
       run: |
         codename=$(lsb_release -c -s)
@@ -55,3 +49,4 @@ jobs:
         git config user.email "actions@github.com"
         git commit -m 'Automatic deployment' || echo 'Nothing to commit'
         git push
+
