@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(fastcdr_ex VERSION 2.3.0)
 
-if (NOT DEFINED CMAKE_INSTALL_PREFIX)
-    set(CMAKE_INSTALL_PREFIX "/opt/fastdds")
-endif()
+set(CMAKE_INSTALL_PREFIX "/opt/fastdds")
 
 if (NOT DEFINED CPACK_PACKAGING_INSTALL_PREFIX)
     set(CPACK_PACKAGING_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
