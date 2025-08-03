@@ -32,11 +32,11 @@ jobs:
         cmake --build .
         cpack
         
-    - name: Upload
-      uses: actions/upload-artifact@v4
-      with:
-        name: Fast-CDR-${{ matrix.platform }}
-        path: build/*.deb
+        #    - name: Upload
+        #      uses: actions/upload-artifact@v4
+        #      with:
+        #        name: Fast-CDR-${{ matrix.platform }}
+        #        path: build/*.deb
 
     - name: Deploy
       run: |
